@@ -1,0 +1,86 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <style>
+        /* Additional Custom CSS */
+        .form-container {
+            display: flex;
+            justify-content: center; /* Center-align the form horizontally */
+            align-items: center; /* Center-align the form vertically */
+            height: calc(100vh - 80px); /* Adjust based on your navbar height */
+            padding: 20px;
+        }
+
+        .form-content {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 800px; /* Set a max width for the form */
+        }
+
+        .form-label h3 {
+            margin: 0;
+            font-size: 1.2rem; /* Adjust font size for labels */
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .btn-danger {
+            background-color: #ff5722; /* Bright orange for visibility */
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #e64a19; /* Darker orange on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-content">
+            <form action="/contents/<%= view_data._id %>/update?_method=PUT" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label"><h3>Title</h3></label>
+                    <input type="text" id="title" class="form-control" name="Content[title]" required value="<%= view_data.title %>">
+                    <div class="invalid-feedback">Please enter a correct title.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="author" class="form-label"><h3>Author</h3></label>
+                    <input type="text" class="form-control" id="author" name="Content[author]" required value="<%= view_data.author %>">
+                    <div class="invalid-feedback">Please enter an author.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label"><h3>Category</h3></label>
+                    <input type="text" class="form-control" id="category" name="Content[category]" required value="<%= view_data.category %>">
+                    <div class="invalid-feedback">Please enter a category.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="content" class="form-label"><h3>Content</h3></label>
+                    <textarea name="Content[content]" id="content" class="form-control" rows="8" required><%= view_data.content %></textarea>
+                    <div class="invalid-feedback">Please write your content.</div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

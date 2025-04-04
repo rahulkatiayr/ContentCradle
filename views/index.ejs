@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+
+<body>
+
+
+        <a href="contents/newform">
+             <button> Create a New Post </button>
+
+
+        </a>
+
+        <a href="/signup"><button>signup</button></a>
+         <a href="/login"><button>login</button></a>
+         <a href="/logout">logout</a>
+
+        <% for(let data of all_data){ %>
+            <div class="content">
+            <h3>
+              Title :  <%= data.title %>
+            </h3>
+            
+            <b> Author : <%= data.author %></b>
+            
+            <p> Category : <%= data.category %></p>
+            
+            <p> Content : <%= data.content %></p>
+            
+            <b> Date : <%= data.date %></b>
+            <p><%= data._id %></p>
+
+
+            <div  class="fixindexbutton">
+              <a href="/contents/<%= data._id %>/edit"><button>Edit content</button></a>
+
+              <a href="/contents/<%= data._id %>/show"><button> Details</button></a>
+
+              <form action="/contents/<%= data._id %>/delete?_method=Delete" method="POST"></form>
+                <button>Delete </button>
+            </form>
+            
+
+
+            </div>
+            
+            
+
+            
+            </div>
+    
+        <%  }%>
+
+
+        
+    
+    
+</body>

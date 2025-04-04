@@ -1,0 +1,67 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<head>
+    <!-- Add Bootstrap CSS link if not already included -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for form centering and styling */
+        .custom-margin {
+            margin-top: 100px; /* Adjust based on your design */
+        }
+
+        .form-container {
+            max-width: 600px; /* Maximum width of the form */
+            margin: 0 auto; /* Centering the form horizontally */
+            padding: 20px; /* Padding around the form */
+            background-color: #f8f9fa; /* Light background color for the form */
+            border-radius: 8px; /* Rounded corners for the form */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow effect */
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-danger {
+            width: 100%; /* Full-width button */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-margin form-container">
+        <form action="/contents/new/submit" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" class="form-control" name="Content[title]" required>
+                <div class="invalid-feedback">Please enter a correct title.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" id="author" class="form-control" name="Content[author]" required>
+                <div class="invalid-feedback">Please enter the author.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <input type="text" id="category" class="form-control" name="Content[category]" required>
+                <div class="invalid-feedback">Please enter a category.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea name="Content[content]" id="content" class="form-control" rows="5" required></textarea>
+                <div class="invalid-feedback">Please write your content.</div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and dependencies if not already included -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

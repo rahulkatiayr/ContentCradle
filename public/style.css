@@ -1,0 +1,58 @@
+/* public/styles/styles.css or within <style> tag */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center-align buttons */
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: #ff5722; /* Bright orange for visibility */
+    color: white;
+    border: none;
+    padding: 12px 25px; /* Adjusted padding for better size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Consistent font size */
+    margin: 10px; /* Space between buttons */
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+button:active {
+    transform: translateY(0); /* Reset lift effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow when pressed */
+}
+
+.content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px auto; /* Center align content blocks */
+    padding: 30px; /* Increased padding for better spacing */
+    max-width: 1000px; /* Increased max width for larger content area */
+    width: 90%; /* Responsive width */
+}
+
+h3 {
+    margin-top: 0;
+}
+
+b {
+    color: #333;
+}
